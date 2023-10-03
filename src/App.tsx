@@ -1,25 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout1, Layout2 } from './layout/Layout1';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          updated text
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout2/>
   );
 }
 
