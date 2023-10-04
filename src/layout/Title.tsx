@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useMemo } from "react";
 import styled from "styled-components";
+import { StyledComponentProps } from "./Layout";
 
 interface TitleProps {
     imageName: string;
+    background: string;
 }
 
 type TitleColors = {
@@ -13,13 +15,9 @@ const TitleContainer = styled.div`
     margin: 1rem;
 `
 
-interface TitleSpanProps {
-    titleColor: string;
-}
-
-const TitleSpan = styled.span<TitleSpanProps>`
+const TitleSpan = styled.span<StyledComponentProps>`
   font-size: 100px;
-  color: ${props => props.titleColor || 'black'};
+  color: ${props => props.color || 'black'};
 `;
 
 export const Title: React.FC<TitleProps> = (props) => {
@@ -27,8 +25,9 @@ export const Title: React.FC<TitleProps> = (props) => {
     const [randomTitleColor, setRandomTitleColor] = useState("");
 
     const titleColors: TitleColors = useMemo(() => ({
-        doorway: ["pink", "purple"],
-        boat: ["blue", "green"]
+        doorway: ["pink", "lightpink"],
+        mirror: ["coral", "lightcoral"],
+        touch: ["green", "gray"]
     }), []);
 
     useEffect(() => {
@@ -39,7 +38,7 @@ export const Title: React.FC<TitleProps> = (props) => {
 
     return (
         <TitleContainer>
-            <TitleSpan titleColor={randomTitleColor}>{imageName}</TitleSpan>
+            <TitleSpan color={randomTitleColor}>{imageName}</TitleSpan>
         </TitleContainer>
     )
 }
