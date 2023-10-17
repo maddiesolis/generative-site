@@ -11,7 +11,7 @@ const TitleDiv = styled.div`
   display: flex;
   justify-content: start;
   align-items: end;
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: 700;
   margin: 1rem;
   gap: 1rem;
