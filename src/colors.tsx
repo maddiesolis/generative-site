@@ -52,12 +52,12 @@ export const mirrorBackgroundColors = [
         {primary: '#FEFEFE', secondary: '#58606C', tertiary: '#23262B', quaternary: '#121212'},
         {primary: '#B7BEC8', secondary: '#627A9D', tertiary: '#5862A7', quaternary: '#292E4F'},
         {primary: '#FEFEFE', secondary: '#DEB9AB', tertiary: '#B64959', quaternary: '#672932'},
-        {primary: '#696969', secondary: '#5C99A3', tertiary: '#3C616D', quaternary: '#1C2E33'},
+        {primary: '#696969', secondary: '#447178', tertiary: '#3C616D', quaternary: '#1C2E33'},
     ]},
     {name: 'color3', code: '#717171', combos: [
         {primary: '#B7BEC8', secondary: '#627A9D', tertiary: '#5862A7', quaternary: '#292E4F'},
         {primary: '#FEFEFE', secondary: '#DEB9AB', tertiary: '#B64959', quaternary: '#672932'},
-        {primary: '#696969', secondary: '#5C99A3', tertiary: '#3C616D', quaternary: '#1C2E33'},
+        {primary: '#B7BEC8', secondary: '#5C99A3', tertiary: '#3C616D', quaternary: '#1C2E33'},
         {primary: '#FEFEFE', secondary: '#58606C', tertiary: '#23262B', quaternary: '#121212'},
     ]},
     {name: 'color4', code: '#3D3D3D', combos: [
@@ -88,7 +88,7 @@ export const touchBackgroundColors = [
         {primary: '#D5A268', secondary: '#BABABB', tertiary: '#3B2323', quaternary: '#0B120A'},
     ]},
     {name: 'color3', code: '#D4A167', combos: [
-        {primary: '#A9A9AB', secondary: '#414144', tertiary: '#303033', quaternary: '#0B120A'},
+        {primary: '#828285', secondary: '#414144', tertiary: '#303033', quaternary: '#0B120A'},
         {primary: '#F1ECDC', secondary: '#E0C88C', tertiary: '#7A6121', quaternary: '#3B2323'},
         {primary: '#E0C88C', secondary: '#826F29', tertiary: '#655019', quaternary: '#202113'},
         {primary: '#CDB5AD', secondary: '#8E6557', tertiary: '#6D4D42', quaternary: '#462A29'},

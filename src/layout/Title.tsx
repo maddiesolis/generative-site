@@ -1,44 +1,25 @@
-import React, { useEffect, useState, useMemo } from "react";
 import styled from "styled-components";
-import { StyledComponentProps } from "./Layout";
+import { TitleProps } from "../props";
 
-interface TitleProps {
-    imageName: string;
-    background: string;
-}
-
-type TitleColors = {
-    [key: string]: string[];
-}
-
-const TitleContainer = styled.div`
-    margin: 1rem;
+const TitlePart1Span = styled.span`
+    color: ${props => props.color};
 `
 
-const TitleSpan = styled.span<StyledComponentProps>`
-  font-size: 100px;
-  color: ${props => props.color || 'black'};
-`;
+const TitlePart2Span = styled.span`
+    color: ${props => props.color};
+`
 
-export const Title: React.FC<TitleProps> = (props) => {
-    const {imageName} = props;
-    const [randomTitleColor, setRandomTitleColor] = useState("");
-
-    const titleColors: TitleColors = useMemo(() => ({
-        doorway: ["pink", "lightpink"],
-        mirror: ["coral", "lightcoral"],
-        touch: ["green", "gray"]
-    }), []);
-
-    useEffect(() => {
-        const colorsForImage = titleColors[imageName];
-        const randomIndex = Math.floor(Math.random() * colorsForImage.length);
-        setRandomTitleColor(colorsForImage[randomIndex])
-    }, [imageName, titleColors]);
-
+export const Title: React.FC<TitleProps> = ({ image, combo }) => {
+    const part1 = image === 'doorway' ? 'Doorway' :
+                        image === 'mirror' ? 'Looking' :
+                        image === 'touch' ? 'Touch' : 'Untitled';
+    const part2 = image === 'doorway' ? '' :
+                        image === 'mirror' ? 'Glass' :
+                        image === 'touch' ? '' : 'Untitled';
     return (
-        <TitleContainer>
-            <TitleSpan color={randomTitleColor}>{imageName}</TitleSpan>
-        </TitleContainer>
+        <>
+            <TitlePart1Span color={combo.primary}>Cat Sage</TitlePart1Span>
+            <TitlePart2Span color={combo.secondary}>Gallery</TitlePart2Span>
+        </>
     )
 }

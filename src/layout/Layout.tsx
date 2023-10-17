@@ -1,31 +1,23 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import doorway from "../images/doorway.png"
 import { doorwayBackgroundColors, images, mirrorBackgroundColors, touchBackgroundColors } from "../colors";
-import { RussianDoll, VerticalStripesDiv } from "./StripedRectangle";
-import { ComboProps } from "./Props";
+import { RussianDoll, VerticalStripesDiv } from "./Stripes";
+import { ComboProps } from "../props";
+import { Haiku } from "../poems/Haiku";
+import { Title } from "./Title";
 
-export interface StyledComponentProps {
-  color: string;
-}
-
-const TitleContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-`
-
-const TitleSpan = styled.span<StyledComponentProps>`
+const TitleDiv = styled.div`
   display: flex;
   justify-content: start;
   align-items: end;
   font-size: 7rem;
-  color: ${props => props.color || 'black'};
   font-weight: 700;
   margin: 1rem;
+  gap: 1rem;
 `;
 
-const PageContainerDiv = styled.div<StyledComponentProps>`
+const PageContainerDiv = styled.div`
   display: grid;
   grid-template-columns: 70% 30%;
   height: 100vh;
@@ -57,7 +49,13 @@ const ArtPieceDiv = styled.div`
   }
 `;
 
-const PoemSpan = styled.span`
+const PoemDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  padding: 2rem;
+  gap: 1rem
 `;
 
 const AnimationDiv = styled.span`
@@ -76,7 +74,7 @@ export const PageLayout = () => {
   useEffect(() => {
     const imageIndex = Math.floor(Math.random() * images.length)
     const selectedImage = images[imageIndex]
-    setImage(selectedImage)  // might need to make this a variable first then pass it in
+    setImage(selectedImage);
 
     let backgrounds: typeof doorwayBackgroundColors | typeof mirrorBackgroundColors | typeof touchBackgroundColors = [];
     if (selectedImage.name == 'doorway') {
@@ -100,18 +98,19 @@ export const PageLayout = () => {
     <PageContainerDiv color={background}>
       <RussianDoll combo={combo}>
         <LhsContainerDiv>
-            <TitleSpan color={combo.primary}>Primary</TitleSpan>
+            <TitleDiv color={combo.primary}>
+              <Title image={image.name} combo={combo}/>
+            </TitleDiv>
             <ArtPieceDiv>
               <img src={image.src} alt={"Random"}></img>
             </ArtPieceDiv>
             </LhsContainerDiv>
           </RussianDoll>
       <RhsContainerDiv>
-        <PoemSpan>
-          
-        </PoemSpan>
+        <PoemDiv>
+          <Haiku image={image.name} combo={combo}/>
+        </PoemDiv>
         <AnimationDiv>
-          {/* <Stripes combo={combo}/> */}
           <VerticalStripesDiv combo={combo} background={background}/>
         </AnimationDiv>
       </RhsContainerDiv>

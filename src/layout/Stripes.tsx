@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ComboProps } from './Props';
+import { ComboProps } from '../props';
 
 const NestedBorderBox = styled.div`
   width: 100%;
@@ -20,8 +20,6 @@ const BorderSquare = styled.div`
   margin-right: 0.4rem;
   display: flex;
 `;
-
-
 
 interface RussianDollProps {
     combo: ComboProps
