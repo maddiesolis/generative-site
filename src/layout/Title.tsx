@@ -10,12 +10,6 @@ const TitlePart2Span = styled.span`
 `
 
 export const Title: React.FC<TitleProps> = ({ image, combo }) => {
-    const part1 = image === 'doorway' ? 'Doorway' :
-                        image === 'mirror' ? 'Looking' :
-                        image === 'touch' ? 'Touch' : 'Untitled';
-    const part2 = image === 'doorway' ? '' :
-                        image === 'mirror' ? 'Glass' :
-                        image === 'touch' ? '' : 'Untitled';
     return (
         <>
             <TitlePart1Span color={combo.primary}>Cat Sage</TitlePart1Span>
