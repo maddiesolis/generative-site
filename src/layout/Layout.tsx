@@ -77,11 +77,11 @@ export const PageLayout = () => {
     setImage(selectedImage);
 
     let backgrounds: typeof doorwayBackgroundColors | typeof mirrorBackgroundColors | typeof touchBackgroundColors = [];
-    if (selectedImage.name == 'doorway') {
+    if (selectedImage.name === 'doorway') {
       backgrounds = doorwayBackgroundColors
-    } else if (selectedImage.name == 'mirror') {
+    } else if (selectedImage.name === 'mirror') {
       backgrounds = mirrorBackgroundColors
-    } else if (selectedImage.name == 'touch') {
+    } else if (selectedImage.name === 'touch') {
       backgrounds = touchBackgroundColors
     }
     const backgroundIndex = Math.floor(Math.random() * backgrounds.length)

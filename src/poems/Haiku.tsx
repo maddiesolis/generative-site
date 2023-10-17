@@ -40,19 +40,19 @@ export const Haiku: React.FC<GenerateHaikuProps> = ({
     const line2 = getRandomLine(line2Options);
     const line3 = getRandomLine(line3Options);
 
-      if (image == 'doorway') {
+      if (image === 'doorway') {
         return (
             <DoorwayHaiku combo={combo} line1={line1} line2={line2} line3={line3}/>
         )
       }
 
-      if (image == 'mirror') {
+      if (image === 'mirror') {
         return (
             <MirrorHaiku combo={combo} line1={line1} line2={line2} line3={line3}/>
         )
       }
 
-      if (image == 'touch') {
+      if (image === 'touch') {
         return (
             <TouchHaiku combo={combo} line1={line1} line2={line2} line3={line3}/>
         )

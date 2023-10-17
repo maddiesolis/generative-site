@@ -22,8 +22,8 @@ const BorderSquare = styled.div`
 `;
 
 interface RussianDollProps {
-    combo: ComboProps
-    children?: React.ReactNode
+    combo: ComboProps;
+    children?: React.ReactNode;
 }
 
 export const RussianDoll: React.FC<RussianDollProps> = ({ combo, children }) => {
