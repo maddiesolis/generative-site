@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import doorway from "../images/doorway.png"
-import mirror from "../images/mirror.png"
-import touch from "../images/touch.png"
-import { Title } from "./Title";
 import { doorwayBackgroundColors, images, mirrorBackgroundColors, touchBackgroundColors } from "../colors";
+import { RussianDoll, VerticalStripesDiv } from "./StripedRectangle";
+import { ComboProps } from "./Props";
 
 export interface StyledComponentProps {
   color: string;
@@ -17,50 +16,52 @@ const TitleContainer = styled.div`
 `
 
 const TitleSpan = styled.span<StyledComponentProps>`
-  font-size: 50px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  font-size: 7rem;
   color: ${props => props.color || 'black'};
+  font-weight: 700;
+  margin: 1rem;
 `;
 
 const PageContainerDiv = styled.div<StyledComponentProps>`
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 70% 30%;
   height: 100vh;
-  background-color: ${props => props.color};;
+  background-color: ${props => props.color};
+  overflow: hidden;
 `;
 
 const LhsContainerDiv = styled.div`
   display: grid;
-  grid-template-rows: 40% 60%;
-  border: solid black 2px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 `;
 
 const RhsContainerDiv = styled.div`
   display: grid;
-  grid-template-rows: 50% 50%;
-  border: solid black 2px;
+  grid-template-rows: 60% 40%;
+  max-height: 100vh;
 `;
 
 const ArtPieceDiv = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  align-items: end;
   overflow: hidden;
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
   }
 `;
 
 const PoemSpan = styled.span`
-  border: solid black 2px;
 `;
 
 const AnimationDiv = styled.span`
-  border: solid black 2px;
 `
-
-export type ImageColorPairs = {
-  [key: string]: string[];
-}
 
 export const PageLayout = () => {
   const [image, setImage] = useState({
@@ -68,7 +69,7 @@ export const PageLayout = () => {
     src: doorway
   });
   const [background, setBackground] = useState("#717171");
-  const [combo, setCombo] = useState(
+  const [combo, setCombo] = useState<ComboProps>(
     {primary: 'black', secondary: 'black', tertiary: 'black', quaternary: 'black'},
   )
 
@@ -97,20 +98,22 @@ export const PageLayout = () => {
 
   return (
     <PageContainerDiv color={background}>
-      <LhsContainerDiv>
-      <TitleContainer>
+      <RussianDoll combo={combo}>
+        <LhsContainerDiv>
             <TitleSpan color={combo.primary}>Primary</TitleSpan>
-            <TitleSpan color={combo.secondary}>Secondary</TitleSpan>
-            <TitleSpan color={combo.tertiary}>Tertiary</TitleSpan>
-            <TitleSpan color={combo.quaternary}>Quaternary</TitleSpan>
-        </TitleContainer>
-        <ArtPieceDiv>
-          <img src={image.src} alt={"Random"}></img>
-        </ArtPieceDiv>
-      </LhsContainerDiv>
+            <ArtPieceDiv>
+              <img src={image.src} alt={"Random"}></img>
+            </ArtPieceDiv>
+            </LhsContainerDiv>
+          </RussianDoll>
       <RhsContainerDiv>
-        <PoemSpan>Poem here</PoemSpan>
-        <AnimationDiv>Animation here</AnimationDiv>
+        <PoemSpan>
+          
+        </PoemSpan>
+        <AnimationDiv>
+          {/* <Stripes combo={combo}/> */}
+          <VerticalStripesDiv combo={combo} background={background}/>
+        </AnimationDiv>
       </RhsContainerDiv>
     </PageContainerDiv>
   )

@@ -29,11 +29,11 @@ export const doorwayBackgroundColors = [
     ]},
     {name: 'color4', code: '#18263B', combos: [
         {primary: '#CF835D', secondary: '#C66C3F', tertiary: '#874728', quaternary: '#482615'},
-        {primary: '#DDD3D3', secondary: '#876867', tertiary: '#293A4F', quaternary: '#241015'},
+        {primary: '#DDD3D3', secondary: '#876867', tertiary: '#CF835D', quaternary: '#6086BE'},
         {primary: '#863C4C', secondary: '#622C37', tertiary: '#4E232C', quaternary: '#241015'},
         {primary: '#AC98C1', secondary: '#9076A7', tertiary: '#966578', quaternary: '#452E37'},
     ]},
-    {name: 'color5', code: '6D433D', combos: [
+    {name: 'color5', code: '#6D433D', combos: [
         {primary: '#CF835D', secondary: '#C66C3F', tertiary: '#874728', quaternary: '#482615'},
         {primary: '#DDD3D3', secondary: '#876867', tertiary: '#293A4F', quaternary: '#18263B'},
         {primary: '#863C4C', secondary: '#622C37', tertiary: '#4E232C', quaternary: '#241015'},
@@ -96,7 +96,7 @@ export const touchBackgroundColors = [
     {name: 'color4', code: '#7A6121', combos: [
         {primary: '#D5A268', secondary: '#BABABB', tertiary: '#3B2323', quaternary: '#0B120A'},
         {primary: '#A9A9AB', secondary: '#414144', tertiary: '#303033', quaternary: '#0B120A'},
-        {primary: '#F1ECDC', secondary: '#E0C88C', tertiary: '#7A6121', quaternary: '#3B2323'},
+        {primary: '#F1ECDC', secondary: '#E0C88C', tertiary: '#655019', quaternary: '#3B2323'},
         {primary: '#CDB5AD', secondary: '#8E6557', tertiary: '#6D4D42', quaternary: '#462A29'},
     ]},
     {name: 'color5', code: '#242311', combos: [
