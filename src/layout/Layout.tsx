@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import doorway from "../images/doorway.png"
 import { doorwayBackgroundColors, images, mirrorBackgroundColors, touchBackgroundColors } from "../colors";
@@ -62,6 +62,7 @@ const AnimationDiv = styled.span`
 `
 
 export const PageLayout = () => {
+  const [count, setCount] = useState(0)
   const [image, setImage] = useState({
     name: 'doorway',
     src: doorway
@@ -72,27 +73,33 @@ export const PageLayout = () => {
   )
 
   useEffect(() => {
-    const imageIndex = Math.floor(Math.random() * images.length)
-    const selectedImage = images[imageIndex]
-    setImage(selectedImage);
+    const intervalId = setInterval(() => {
+      const imageIndex = Math.floor(Math.random() * images.length)
+      const selectedImage = images[imageIndex]
+      setImage(selectedImage);
 
-    let backgrounds: typeof doorwayBackgroundColors | typeof mirrorBackgroundColors | typeof touchBackgroundColors = [];
-    if (selectedImage.name === 'doorway') {
-      backgrounds = doorwayBackgroundColors
-    } else if (selectedImage.name === 'mirror') {
-      backgrounds = mirrorBackgroundColors
-    } else if (selectedImage.name === 'touch') {
-      backgrounds = touchBackgroundColors
-    }
-    const backgroundIndex = Math.floor(Math.random() * backgrounds.length)
-    const selectedBackground = backgrounds[backgroundIndex].code
-    setBackground(selectedBackground)
+      let backgrounds: typeof doorwayBackgroundColors | typeof mirrorBackgroundColors | typeof touchBackgroundColors = [];
+      if (selectedImage.name === 'doorway') {
+        backgrounds = doorwayBackgroundColors
+      } else if (selectedImage.name === 'mirror') {
+        backgrounds = mirrorBackgroundColors
+      } else if (selectedImage.name === 'touch') {
+        backgrounds = touchBackgroundColors
+      }
+      const backgroundIndex = Math.floor(Math.random() * backgrounds.length)
+      const selectedBackground = backgrounds[backgroundIndex].code
+      setBackground(selectedBackground)
 
-    const combos = backgrounds[backgroundIndex].combos
-    const comboIndex = Math.floor(Math.random() * combos.length)
-    const selectedCombo = combos[comboIndex]
-    setCombo(selectedCombo)
-  }, []);
+      const combos = backgrounds[backgroundIndex].combos
+      const comboIndex = Math.floor(Math.random() * combos.length)
+      const selectedCombo = combos[comboIndex]
+      setCombo(selectedCombo)
+
+      setCount(count + 1);
+    }, 5000); // 5000 milliseconds = 5 seconds
+
+    return () => clearInterval(intervalId);
+  }, [image, count]);
 
   return (
     <PageContainerDiv color={background}>
