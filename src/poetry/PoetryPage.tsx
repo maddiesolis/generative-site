@@ -4,7 +4,7 @@ import doorway from "../images/doorway.png"
 import { doorwayBackgroundColors, images, mirrorBackgroundColors, touchBackgroundColors } from "../colors";
 import { RussianDoll, VerticalStripesDiv } from "./Stripes";
 import { ComboProps } from "../props";
-import { Haiku } from "../poems/Haiku";
+import { Haiku } from "./poems/Haiku";
 import { Title } from "./Title";
 
 const TitleDiv = styled.div`
@@ -61,7 +61,7 @@ const PoemDiv = styled.div`
 const AnimationDiv = styled.span`
 `
 
-export const PageLayout = () => {
+export const PoetryPage = () => {
   const [count, setCount] = useState(0)
   const [image, setImage] = useState({
     name: 'doorway',

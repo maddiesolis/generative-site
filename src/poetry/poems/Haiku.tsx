@@ -1,4 +1,4 @@
-import { GenerateHaikuProps, HaikuProps } from "../props";
+import { GenerateHaikuProps, HaikuProps } from "../../props";
 import styled from "styled-components";
 import { DoorwayHaikuOptions, MirrorHaikuOptions, TouchHaikuOptions } from "./haikus";
 import { useEffect, useState } from "react";
