@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { PoetryPage } from './poetry/PoetryPage';
-import { HomePage } from './HomePage';
-import { QuizPage } from './QuizPage';
+import { QuizPage } from './quiz/QuizPage';
+import HomePage from './home/HomePage';
 
 const App: React.FunctionComponent = () => {
   return (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="about" element={<PoetryPage />} />
-            <Route path="skills" element={<QuizPage />} />
+            <Route path="poetry" element={<PoetryPage />} />
+            <Route path="quiz" element={<QuizPage />} />
         </Routes>
     </BrowserRouter>
 );
