@@ -33,11 +33,9 @@ export const HomeTitleDiv = styled.div`
 `
 export const IntroSpan = styled.span`
     font-family: 'Baloo Bhaijaan 2', sans-serif;
-    /* font-family: 'Titan One', sans-serif; */
-    font-weight: 700;
+    font-weight: 800;
     font-size: 30px;
-    line-height: 30px;
-    height: 30px;
+    height: 10px;
     color: #264653;
 `
 
@@ -45,15 +43,15 @@ export const TitleSpan = styled.span`
     font-family: 'Titan One', sans-serif;
     font-weight: 700;
     font-size: 90px;
-    line-height: 74px;
+    line-height: 120px;
     color: #264653;
 `
 export const DescriptionSpan = styled(IntroSpan)`
-    font-weight: 700 !important;
+    font-weight: 400 !important;
     width: 600px;
     font-size: 40px;
-    line-height: 40px;
-    margin-top: 30px;
+    line-height: 50px;
+    margin-top: 20px;
 `
 export const AnimatedButtonDiv = styled.div`
     position: relative;
