@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Question } from './Question';
 import sample1 from "../images/sample1.png"
+import result_120 from "../images/result_120.png"
+import { Result } from './Result';
 
 const questions = [ 
 	{ 
@@ -18,24 +20,6 @@ const questions = [
 	}
 ]; 
 
-const QuizDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-`
-const ArtPieceDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  img {
-    width: 40%;
-    height: 40%;
-  }
-`;
 
 export const Quiz: React.FC = () => { 
 	const [currentQuestion, setCurrentQuestion] = useState(0); 
@@ -51,7 +35,7 @@ export const Quiz: React.FC = () => {
 	}
 
 	return ( 
-		<QuizDiv> 
+		<> 
 			{currentQuestion < questions.length && ( 
 				<Question 
 					question={questions[currentQuestion].question} 
@@ -62,11 +46,8 @@ export const Quiz: React.FC = () => {
 				/> 
 			)}
 			{currentQuestion === questions.length && (
-				<ArtPieceDiv>
-					Image here
-					<img src={sample1} alt={"Random"}></img>
-				</ArtPieceDiv>
+				<Result image={result_120}/>
 			)} 
-		</QuizDiv> 
+		</> 
 	) 
 } 
