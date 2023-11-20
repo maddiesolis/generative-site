@@ -1,8 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { AnimatedButton, AnimatedButtonDiv, AnimatedButtonLink, DescriptionSpan, FullNameSpan, HomeDiv, HomeLeftSideDiv, HomeRightSideDiv, HomeTitleDiv, PageContainerDiv, IntroSpan } from './HomeComponents';
+import { DescriptionSpan, TitleSpan, HomeDiv, HomeLeftSideDiv, HomeRightSideDiv, HomeTitleDiv, PageContainerDiv, IntroSpan, GridDiv } from './HomeComponents';
 import Navbar from "../Navbar";
-import { WordFlicker } from "./WordFlicker";
+import { GradientText } from "./GradientText";
+import { InitialFlicker } from "./InitialFlicker";
+import blank_sample from "../images/blank_sample.png"
+import { GridElementDiv } from "./GridElement";
+import { Slideshow } from "./Slideshow";
+import sample1 from '../images/sample1.png';
+import sample2 from '../images/sample2.png';
+import sample3 from '../images/sample3.png';
+import sample4 from '../images/sample4.png';
 
 export const LayoutDiv = styled.div`
     display: grid;
@@ -10,8 +18,7 @@ export const LayoutDiv = styled.div`
     height: 100vh;
 `
 
-const HomePage: React.FunctionComponent = () => {
-
+export const HomePage: React.FC = () => {
     return (
         <LayoutDiv>
             <Navbar/>
@@ -19,18 +26,26 @@ const HomePage: React.FunctionComponent = () => {
                 <HomeDiv>
                     <HomeLeftSideDiv>
                         <HomeTitleDiv>
-                            <WordFlicker words={["Welcome to the", "Bienvenue a la", "Bienvenidos al"]}/>
-                            <FullNameSpan>Cat Sage Gallery</FullNameSpan>
+                            <InitialFlicker text="Welcome to the"/>
+                            <GradientText text="Cat Sage Gallery"/>
                             <DescriptionSpan>Placeholder text here.</DescriptionSpan>
                         </HomeTitleDiv>
                     </HomeLeftSideDiv>
                     <HomeRightSideDiv>
-                        SVG goes here
+                        <GridDiv>
+                            <GridElementDiv><img src={blank_sample} alt={"Random"}></img></GridElementDiv>
+                            <GridElementDiv><img src={blank_sample} alt={"Random"}></img></GridElementDiv>
+                            <Slideshow images={[sample1, sample2, sample3, sample4]} seconds={10}/>
+                            <GridElementDiv><img src={blank_sample} alt={"Random"}></img></GridElementDiv>
+                            <Slideshow images={[sample1, sample2, sample3, sample4]} seconds={8}/>
+                            <Slideshow images={[sample1, sample2, sample3, sample4]} seconds={17}/>
+                            <Slideshow images={[sample1, sample2, sample3, sample4]} seconds={29}/>
+                            <Slideshow images={[sample1, sample2, sample3, sample4]} seconds={21}/>
+                            <Slideshow images={[sample1, sample2, sample3, sample4]} seconds={11}/>
+                        </GridDiv>
                     </HomeRightSideDiv>
                 </HomeDiv>
             </PageContainerDiv>
         </LayoutDiv>
     );
 };
-
-export default HomePage;

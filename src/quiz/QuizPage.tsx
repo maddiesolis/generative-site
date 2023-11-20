@@ -1,9 +1,7 @@
-import React from "react";
 import { LayoutDiv } from "../home/HomePage";
 import Navbar from "../Navbar";
-import Question from "./Question";
-import Quiz from "./Quiz";
 import { PageContainerDiv } from "../home/HomeComponents";
+import { Quiz } from "./Quiz";
 
 export const QuizPage = () => {
     return (

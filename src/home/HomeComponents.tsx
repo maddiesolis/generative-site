@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
 export const PageContainerDiv = styled.div`
-    padding: 5% 10%;
+    padding: 5%;
 `
 export const HomeDiv = styled.div`
     display: grid;
@@ -16,38 +16,44 @@ export const HomeLeftSideDiv = styled.div`
 `
 export const HomeRightSideDiv = styled.div`
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-self: flex-end;
+    align-self: flex-end;
     position: relative;
+`
+export const GridDiv = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 14rem);
+    grid-template-rows: repeat(3, 14rem);
 `
 
 export const HomeTitleDiv = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 2rem;
 `
-
 export const IntroSpan = styled.span`
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    /* font-family: 'Titan One', sans-serif; */
     font-weight: 700;
-    font-size: 22px;
-    line-height: 22px;
+    font-size: 30px;
+    line-height: 30px;
+    height: 30px;
     color: #264653;
 `
 
-export const FullNameSpan = styled.span`
-    font-family: 'Ubuntu', sans-serif;
+export const TitleSpan = styled.span`
+    font-family: 'Titan One', sans-serif;
     font-weight: 700;
-    font-size: 54px;
+    font-size: 90px;
     line-height: 74px;
     color: #264653;
 `
 export const DescriptionSpan = styled(IntroSpan)`
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     width: 600px;
-    font-size: 24px;
+    font-size: 40px;
     line-height: 40px;
-    margin-top: 10px;
+    margin-top: 30px;
 `
 export const AnimatedButtonDiv = styled.div`
     position: relative;

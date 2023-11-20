@@ -1,72 +1,72 @@
 import React, { useState } from 'react'; 
-import Question from './Question'; 
 import styled from 'styled-components';
-
-const QuizLayoutDiv = styled.div`
-	display: flex;
-	align-items: center;
-	justify-items: center;
-	flex-direction: column;
-`
+import { Question } from './Question';
+import sample1 from "../images/sample1.png"
 
 const questions = [ 
 	{ 
-		question: 'What is the capital of France?', 
-		choices: ['Paris', 'London', 'New York'], 
-		answer: 'Paris', 
+		question: 'Which of the following do you spend the most time doing?', 
+		choices: ['Self-reflecting and introspecting', 'Observing others and the surrounding world', 'Exploring the imaginative realm']
 	}, 
 	{ 
-		question: 'What is the largest planet in our solar system?', 
-		choices: ['Mars', 'Jupiter', 'Venus'], 
-		answer: 'Jupiter', 
+		question: 'How do you perceive time?', 
+		choices: ['Linear: moments progress uniformly', 'Fluid: moments can stretch or contract', 'Episodic: time unfolds in distinct, meaningful moments']
 	}, 
 	{ 
-		question: 'What is the boiling point of water?', 
-		choices: ['100°C', '0°C', '50°C'], 
-		answer: '100°C', 
-	}, 
-	{ 
-		question: 'What is the largest planet in our solar system?', 
-		choices: ['Mars', 'Jupiter', 'Venus'], 
-		answer: 'Jupiter', 
-	}, 
-	{ 
-		question: 'What is the boiling point of water?', 
-		choices: ['100°C', '0°C', '50°C'], 
-		answer: '100°C', 
-	}, 
+		question: 'When contemplating the unknown, which thought process resonates with you the most?', 
+		choices: ['Pondering all of the different possibilities and potential outcomes', 'Embracing uncertainty and feeling comfortable with ambiguity', 'Finding patterns and connections within the unknown in order to form a clearer understanding']
+	}
 ]; 
 
-const Quiz: React.FC = () => { 
+const QuizDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+`
+const ArtPieceDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  img {
+    width: 40%;
+    height: 40%;
+  }
+`;
+
+export const Quiz: React.FC = () => { 
 	const [currentQuestion, setCurrentQuestion] = useState(0); 
-	const [score, setScore] = useState(0); 
+	const [answers, setAnswers] = useState<number[]>([]);
 
-	const handleAnswer = (answer: string) => { 
-		if (answer === questions[currentQuestion].answer) { 
-			setScore(score + 1); 
-		} 
-
+	const handleAnswer = (answer: string) => {
+		const answerIndex = questions[currentQuestion].choices.indexOf(answer)
+		setAnswers(prevAnswers => [...prevAnswers, answerIndex]);
 		const nextQuestion = currentQuestion + 1; 
-		if (nextQuestion < questions.length) { 
+		if (nextQuestion <= questions.length) { 
 			setCurrentQuestion(nextQuestion); 
-		} else { 
-			alert(`Quiz finished. You scored ${score}/${questions.length}`); 
-		} 
-	}; 
+		}
+	}
 
 	return ( 
-		<QuizLayoutDiv> 
-			{currentQuestion < questions.length ? ( 
+		<QuizDiv> 
+			{currentQuestion < questions.length && ( 
 				<Question 
 					question={questions[currentQuestion].question} 
 					choices={questions[currentQuestion].choices} 
-					answer={questions[currentQuestion].answer} 
-					onAnswer={handleAnswer} 
+					onAnswer={handleAnswer}
+					first={currentQuestion === 0}
+					last={currentQuestion === questions.length - 1}
 				/> 
-			) : "null"
-			} 
-		</QuizLayoutDiv> 
+			)}
+			{currentQuestion === questions.length && (
+				<ArtPieceDiv>
+					Image here
+					<img src={sample1} alt={"Random"}></img>
+				</ArtPieceDiv>
+			)} 
+		</QuizDiv> 
 	) 
 } 
-
-export default Quiz; 

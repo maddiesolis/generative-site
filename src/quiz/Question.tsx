@@ -1,27 +1,43 @@
 import React from 'react'; 
+import { IntroSpan } from '../home/HomeComponents';
+import styled from 'styled-components';
 
+const ChoicesDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+`
+const ChoiceButton = styled.button`
+    border-radius: 2rem;
+    background-color: #F07167;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    padding: 20px;
+    width: 25rem;
+    border: none;
+`
 
 interface QuestionProps { 
 	question: string; 
 	choices: string[]; 
-	answer: string; 
 	onAnswer: (answer: string) => void; 
+    first?: boolean;
+    last?: boolean;
 } 
 
-const Question: React.FC<QuestionProps> = ( 
-	{ question, choices, answer, onAnswer }) => { 
+export const Question: React.FC<QuestionProps> = ( 
+	{ question, choices, onAnswer, first, last }) => { 
 	return ( 
         <>
-            <h2>{question}</h2> 
-            <div> 
+            <IntroSpan>{question}</IntroSpan>
+            <ChoicesDiv> 
                 {choices.map((choice) => ( 
-                    <button className="btn btn-success m-2" onClick={() => onAnswer(choice)}> 
+                    <ChoiceButton key={choice} onClick={() => onAnswer(choice)}> 
                         {choice}
-                    </button> 
+                    </ChoiceButton> 
                 ))} 
-            </div> 
+            </ChoicesDiv>
         </>
 	); 
 }; 
-
-export default Question; 

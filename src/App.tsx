@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { PoetryPage } from './poetry/PoetryPage';
 import { QuizPage } from './quiz/QuizPage';
-import HomePage from './home/HomePage';
+import { HomePage } from './home/HomePage';
 
 const App: React.FunctionComponent = () => {
   return (

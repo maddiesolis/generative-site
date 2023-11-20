@@ -26,7 +26,7 @@ export const NavMenuLink = styled(Link)`
     font-size: 18px;
     line-height: 22px;
     font-weight: 700;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Titan One', sans-serif;
     :hover {
         color: #c47779;
         cursor: pointer;
@@ -34,35 +34,11 @@ export const NavMenuLink = styled(Link)`
 `
 
 export const LogoLink = styled(NavMenuLink)`
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Titan One', sans-serif;
     font-size: 24px;
     line-height: 28px;
-    font-weight: 900;
-    width: fit-content;
-`
-
-export const NavMenuButton = styled.button`
-    padding: 10px 24px;
-    height: fit-content;
-    width: fit-content;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    line-height: 22px;
     font-weight: 700;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #F07167;
-    :hover {
-        background-color: #c47779;
-        cursor: pointer;
-    }
-`
-export const NavMenuButtonLink = styled(NavMenuLink)`
-    color: #ffffff;
-    :hover {
-        color: #ffffff;
-        cursor: pointer;
-    }
+    width: fit-content;
 `
 
 const Navbar: React.FunctionComponent = () => {

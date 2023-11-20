@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import doorway from "../images/doorway.png"
 import { doorwayBackgroundColors, images, mirrorBackgroundColors, touchBackgroundColors } from "../colors";
@@ -55,7 +55,7 @@ const PoemDiv = styled.div`
   align-items: start;
   justify-content: end;
   padding: 2rem;
-  gap: 1rem
+  gap: 1rem;
 `;
 
 const AnimationDiv = styled.span`
