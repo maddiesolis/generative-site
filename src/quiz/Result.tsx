@@ -1,7 +1,6 @@
 import React from 'react'; 
-import { QuestionLayoutDiv, TitleH2 } from './Question';
+import { TitleH2 } from './Question';
 import styled from 'styled-components';
-import sample1 from "../images/sample1.png"
 
 const ArtPieceDiv = styled.div`
   display: flex;

@@ -1,71 +1,110 @@
 import Navbar from "../Navbar"
-import { PageContainerDiv } from "../home/HomeComponents"
 import { LayoutDiv } from "../home/HomePage"
 import styled from "styled-components"
-import sample1 from '../images/sample1.png';
-import sample2 from '../images/sample2.png';
-import sample3 from '../images/sample3.png';
-import sample4 from '../images/sample4.png';
+import { Slideshow } from "../home/Slideshow";
+import { GradientBackground } from "./GradientBackground";
+import { WordFlicker } from "../home/WordFlicker";
+import { series1, series2, series3, series4, series5, series6, series7 } from "../quiz/AnswerCombos";
+import { useEffect, useState } from "react";
 
-const PoetryContainerDiv = styled(LayoutDiv)`
-    padding: 0 5%;
-    height: 100%;
+const PoetryPageDiv = styled(LayoutDiv)`
+    padding: 0 5% 5% 5%;
+    height: 100vh;
 `
-const PoetryGridDiv = styled.div`
+const OuterGridDiv = styled.div`
     display: grid;
     grid-template-columns: 3fr 1fr;
     height: 100%;
-    position: relative;
 `
-const LeftDiv = styled.div`
+const LeftGridDiv = styled.div`
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    height: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 350px);
+    @media (min-width: 1600px) {
+        grid-template-rows: repeat(2, 440px);
+    }
 `
-const GridElementDiv = styled.div`
-    border: 2px solid purple;
-    margin: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4px;
-    img {
-        width: 100%;
-        height: 100%;
-        /* width: 20rem;   // uncomment for fixed size
-        height: 20rem; */
+const RightGridDiv = styled.div`
+    display: grid;
+    height: 700px;
+    @media (min-width: 1600px) {
+        height: 880px;
     }
 `
 const SplitRectangleDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 100%;
+`
+const FlickerTextBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 28px 0 40px 1rem;
+    @media (min-width: 1600px) {
+        justify-content: space-evenly;
+    }
+`
+const GradientWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
 `
 export const NewPoetryPage: React.FC = () => {
+    // Initialize display objects {images, colors}
+    const [display1, setDisplay1] = useState(series1)
+    const [display2, setDisplay2] = useState(series4)
+    const [display3, setDisplay3] = useState(series6)
+    // Specify series options for each display
+    const display2Options = [series1, series2, series3]
+    const display1Options = [series4, series5]
+    const display3Options = [series6, series7]
+
+    useEffect(() => {
+        // Randomize chosen series within display options
+        const display1Index = Math.floor(Math.random() * display1Options.length)
+        const display2Index = Math.floor(Math.random() * display2Options.length)
+        const display3Index = Math.floor(Math.random() * display3Options.length)
+        // Set selected display
+        const selectedDisplay1 = display1Options[display1Index]
+        setDisplay1(selectedDisplay1);
+        const selectedDisplay2 = display2Options[display2Index]
+        setDisplay2(selectedDisplay2);
+        const selectedDisplay3 = display3Options[display3Index]
+        setDisplay3(selectedDisplay3);
+        // Console logs
+        console.log('display 1', display1)
+        console.log('display 2', display2)
+        console.log('display 3', display3)
+    })
     return(
-        <LayoutDiv>
-            <Navbar/>
-            <PoetryContainerDiv>
-                <PoetryGridDiv>
-                    <LeftDiv>
-                        <GridElementDiv>
-                            <img src={sample1} alt="Sample1"></img>
-                        </GridElementDiv>
+        <PoetryPageDiv>
+            <LayoutDiv>
+                <Navbar/>
+                <OuterGridDiv>
+                    <LeftGridDiv>
                         <SplitRectangleDiv>
-                            <GridElementDiv>2</GridElementDiv>
-                            <GridElementDiv>
-                                <img src={sample3} alt="Sample1"></img>
-                            </GridElementDiv>
+                            {/* Display 1 */}
+                            <Slideshow images={display1.images} seconds={22}/>
+                            <FlickerTextBox>
+                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={100} color={display1.colors.primary}/>
+                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={240} color={display1.colors.secondary}/>
+                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={848} color={display1.colors.tertiary}/>
+                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={53} color={display1.colors.quaternary}/>                            </FlickerTextBox>
                         </SplitRectangleDiv>
-                        <GridElementDiv>4</GridElementDiv>
-                        <GridElementDiv>5</GridElementDiv>
-                    </LeftDiv>
-                    <GridElementDiv>6</GridElementDiv>
-                </PoetryGridDiv>
-            </PoetryContainerDiv>
-        </LayoutDiv>
+                        {/* Display 2 */}
+                        <Slideshow images={display2.images} seconds={10}/>
+                        {/* Display 3 */}
+                        <GradientWrapper><GradientBackground colors={display3.colors}/></GradientWrapper>
+                        <Slideshow images={display3.images} seconds={34}/>
+                    </LeftGridDiv>
+                    {/* Display 2 */}
+                    <RightGridDiv>
+                        <GradientWrapper><GradientBackground colors={display2.colors}/></GradientWrapper>
+                    </RightGridDiv>
+                </OuterGridDiv>
+            </LayoutDiv>
+        </PoetryPageDiv>
     )
 }

@@ -20,11 +20,6 @@ export const HomeRightSideDiv = styled.div`
     align-self: flex-end;
     position: relative;
 `
-export const GridDiv = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 14rem);
-    grid-template-rows: repeat(3, 14rem);
-`
 
 export const HomeTitleDiv = styled.div`
     display: flex;

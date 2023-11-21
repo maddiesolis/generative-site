@@ -3,20 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import sample1 from "../images/sample1.png";
 import sample2 from "../images/sample2.png";
 
-export const GridElementDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  img {
-    width: 13rem;
-    height: 13rem;
-    border-radius: 4px;
-  }
-`
-
 const FadeOutAnimation = keyframes`
   from { opacity: 1.0; }
   to { opacity: 0.0; }

@@ -4,6 +4,7 @@ import { Question } from './Question';
 import sample1 from "../images/sample1.png"
 import result_120 from "../images/result_120.png"
 import { Result } from './Result';
+import { AnswerCombos } from './AnswerCombos';
 
 const questions = [ 
 	{ 
@@ -33,7 +34,13 @@ export const Quiz: React.FC = () => {
 			setCurrentQuestion(nextQuestion); 
 		}
 	}
-
+    let correspondingImage = null;
+    AnswerCombos.forEach(item => {
+        if (JSON.stringify(item.result) === JSON.stringify(answers)) {
+            correspondingImage = item.image;
+        }
+    })
+	
 	return ( 
 		<> 
 			{currentQuestion < questions.length && ( 
@@ -46,7 +53,7 @@ export const Quiz: React.FC = () => {
 				/> 
 			)}
 			{currentQuestion === questions.length && (
-				<Result image={result_120}/>
+				<Result image={correspondingImage}/>
 			)} 
 		</> 
 	) 
