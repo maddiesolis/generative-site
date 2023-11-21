@@ -23,14 +23,13 @@ interface WordFlickerProps {
 export const WordFlicker: React.FC<WordFlickerProps> = ({textArray, delay, color}) => {
     const [displayedText, setDisplayedText] = useState<string>('');
 
-    let i = 0;
-    let offset = 0;
-    const len = textArray.length;
-    let forwards = true;
-    let skip_count = 0;
-    const speed = 100;
-
     useEffect(() => {
+        let i = 0;
+        let offset = 0;
+        let forwards = true;
+        let skip_count = 0;
+        const len = textArray.length;
+        const speed = 100;
         const wordFlick = setInterval(() => {
         if (forwards) {
             if (offset >= textArray[i].length) {
@@ -67,7 +66,7 @@ export const WordFlicker: React.FC<WordFlickerProps> = ({textArray, delay, color
         }, speed);
 
         return () => clearInterval(wordFlick);
-    }, []);
+    }, [delay, textArray]);
 
     return (
         <TextSpan color={color}>{displayedText}</TextSpan>
