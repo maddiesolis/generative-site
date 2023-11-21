@@ -1,2 +1,7 @@
-/gallery    /gallery.html    200
-/you        /you.html        200
+# Redirects from Netlify to your React app routes
+/gallery.html    /gallery    200
+/you.html        /you        200
+
+# Default redirect to handle any unmatched routes
+/*               /           200
+
