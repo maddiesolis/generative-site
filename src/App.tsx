@@ -9,8 +9,8 @@ const App: React.FunctionComponent = () => {
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="gallery" element={<GalleryPage />} />
-            <Route path="you" element={<QuizPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/you" element={<QuizPage />} />
         </Routes>
     </BrowserRouter>
 );
