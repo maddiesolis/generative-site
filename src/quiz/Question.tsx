@@ -23,14 +23,15 @@ const OptionsContainer = styled.div`
 const Option = styled.button`
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
+    color: #18263B;
     padding: 10px;
     margin: 0 auto;
     width: 80%;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 24px;
-    background-color: #f5f5f5;
+    background-color: #dae2f0;
     &:hover {
-        background-color: #767676;
+        background-color: #acc0dd;
     }
     cursor: pointer;
 `;

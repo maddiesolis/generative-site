@@ -3,10 +3,15 @@ import styled from 'styled-components';
 
 const TextSpan = styled.span`
     font-weight: 800;
-    font-size: 24px;
-    line-height: 28px;
-    height: 28px;
+    font-size: 20px;
+    line-height: 24px;
+    height: 24px;
     color: ${props => props.color};
+    @media (min-width: 1600px) {
+        font-size: 24px;
+        line-height: 28px;
+        height: 28px;
+    }
 `
 
 interface WordFlickerProps {

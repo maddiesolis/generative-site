@@ -4,21 +4,22 @@ import styled from "styled-components";
 export const QuizDescriptionSpan = styled.span`
     font-size: 22px;
     text-align: center;
-    color: #DDD3D3
+    color: #18263B;
 `
 
-export const NextButton = styled.button`
+export const StartButton = styled.button`
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
     font-weight: 800;
+    color: #ffffff;
     padding: 10px 30px;
     margin: 0 auto;
     margin-top: 20px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 24px;
-    background-color: #f5f5f5;
+    background-color: #CF835D;
     &:hover {
-        background-color: #767676;
+        background-color: #b56036;
     }
     cursor: pointer;
 `;
@@ -35,7 +36,7 @@ export const QuizIntro: React.FC<QuizIntroProps> = ({ onStart }) => {
                 The Cat Sage has three questions for you. There are no right or wrong answers, they simply seek to better understand the inner workings of your mind.
                 Once you complete the questions, an image with a title and description will be shared with you based on the answers you provide.
             </QuizDescriptionSpan>
-            <NextButton onClick={onStart}>Start</NextButton>
+            <StartButton onClick={onStart}>Start</StartButton>
         </QuestionLayoutDiv>
 	); 
 }; 

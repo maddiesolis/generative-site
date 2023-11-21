@@ -11,7 +11,7 @@ const gradientAnimation = keyframes`
 `;
 
 const GradientTextSpan = styled(TitleSpan)`
-  animation: ${gradientAnimation} 100s linear infinite;
+  animation: ${gradientAnimation} 30s linear infinite;
 `;
 
 interface GradientTextProps {

@@ -43,10 +43,10 @@ export const TitleSpan = styled.span`
 export const DescriptionSpan = styled(IntroSpan)`
     font-weight: 400 !important;
     width: 800px;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 50px;
-    margin-top: 40px;
-    color: #DDD3D3
+    margin-top: 20px;
+    color: #18263B
 `
 export const AnimatedButtonDiv = styled.div`
     position: relative;

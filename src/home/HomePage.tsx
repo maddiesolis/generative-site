@@ -10,7 +10,7 @@ export const LayoutDiv = styled.div`
     grid-template-rows: 10% 90%;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background-color: #18263B;
+    /* background-color: #DDD3D3; */
 `
 
 export const HomePage: React.FC = () => {
@@ -24,7 +24,9 @@ export const HomePage: React.FC = () => {
                             <InitialFlicker text="Welcome to the"/>
                             <GradientText text="Cat Sage Gallery"/>
                             <DescriptionSpan>
-                            This exhibition explores ways to represent individuals based on their philosophical perceptions of the world, as well as their general thought process patterns. Imagery and literature are used throughout the gallery, particularly in the interactive activity located under the <i>You</i> tab.
+                            This exhibition explores ways to represent individuals based on their philosophical perceptions of the world, as well as their general thought process patterns. 
+                            Imagery and literature are used throughout the gallery, particularly in the interactive activity located under the <i>You</i> tab.
+                            The <i>Gallery</i> tab uses randomization to showcase the artworks.
                             </DescriptionSpan>
                         </HomeTitleDiv>
                     </HomeLeftSideDiv>

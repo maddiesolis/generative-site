@@ -10,6 +10,7 @@ export const NavContainerDiv = styled.div`
     padding: 20px 48px;
     position: sticky;
     top: 0;
+    background-color: white;
 `
 
 export const NavMenuDiv = styled(NavContainerDiv)`
@@ -21,12 +22,12 @@ export const NavMenuDiv = styled(NavContainerDiv)`
 
 export const NavMenuLink = styled(Link)`
     text-decoration: none;
-    color: #6086BE;
+    color: #863C4C;
     font-size: 20px;
     line-height: 24px;
     font-weight: 800;
     &:hover {
-        color: #aec2de;
+        color: #4E232C;
         cursor: pointer;
     }
 `

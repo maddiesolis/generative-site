@@ -8,7 +8,7 @@ import { series1, series2, series3, series4, series5, series6, series7 } from ".
 import { useEffect, useState } from "react";
 
 const PoetryPageDiv = styled(LayoutDiv)`
-    padding: 0 5% 5% 5%;
+    padding: 0 5%;
     height: 100vh;
 `
 const OuterGridDiv = styled.div`
@@ -38,12 +38,9 @@ const SplitRectangleDiv = styled.div`
 const FlickerTextBox = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 40px;
-    padding: 28px 0 40px 1rem;
-    @media (min-width: 1600px) {
-        justify-content: space-evenly;
-    }
+    padding: 28px 1rem 40px 1rem;
 `
 const GradientWrapper = styled.div`
     display: flex;
@@ -79,32 +76,33 @@ export const NewPoetryPage: React.FC = () => {
         console.log('display 3', display3)
     })
     return(
-        <PoetryPageDiv>
-            <LayoutDiv>
-                <Navbar/>
-                <OuterGridDiv>
-                    <LeftGridDiv>
-                        <SplitRectangleDiv>
-                            {/* Display 1 */}
-                            <Slideshow images={display1.images} seconds={22}/>
-                            <FlickerTextBox>
-                                <WordFlicker textArray={["How would you describe yourself?", "How would others describe you?"]} delay={100} color={display1.colors.primary}/>
-                                <WordFlicker textArray={["How would you visualise yourself?", "What does it mean to visualise yourself?", "What criteria do you use to evaluate yourself?"]} delay={240} color={display1.colors.secondary}/>
-                                <WordFlicker textArray={["Is there a realm that represents you?", "Can you picture a realm that represents you?"]} delay={848} color={display1.colors.tertiary}/>
-                                <WordFlicker textArray={["What shapes represent you?", "What colours represent you?"]} delay={53} color={display1.colors.quaternary}/>                            </FlickerTextBox>
-                        </SplitRectangleDiv>
-                        {/* Display 2 */}
-                        <Slideshow images={display2.images} seconds={10}/>
-                        {/* Display 3 */}
-                        <GradientWrapper><GradientBackground colors={display3.colors}/></GradientWrapper>
-                        <Slideshow images={display3.images} seconds={34}/>
-                    </LeftGridDiv>
+        <LayoutDiv>
+            <Navbar/>
+            <PoetryPageDiv>
+            <OuterGridDiv>
+                <LeftGridDiv>
+                    <SplitRectangleDiv>
+                        {/* Display 1 */}
+                        <Slideshow images={display1.images} seconds={22}/>
+                        <FlickerTextBox>
+                            <WordFlicker textArray={["How would you describe yourself?", "How would others describe you?"]} delay={100} color={display1.colors.primary}/>
+                            <WordFlicker textArray={["How would you visualise yourself?", "What does it mean to visualise yourself?", "What criteria do you use to evaluate yourself?"]} delay={240} color={display1.colors.secondary}/>
+                            <WordFlicker textArray={["Is there a realm that represents you?", "Can you picture a realm that represents you?"]} delay={848} color={display1.colors.tertiary}/>
+                            <WordFlicker textArray={["What shapes represent you?", "What colours represent you?"]} delay={53} color={display1.colors.quaternary}/>                            </FlickerTextBox>
+                    </SplitRectangleDiv>
                     {/* Display 2 */}
-                    <RightGridDiv>
-                        <GradientWrapper><GradientBackground colors={display2.colors}/></GradientWrapper>
-                    </RightGridDiv>
-                </OuterGridDiv>
-            </LayoutDiv>
-        </PoetryPageDiv>
+                    <Slideshow images={display2.images} seconds={10}/>
+                    {/* Display 3 */}
+                    <GradientWrapper><GradientBackground colors={display3.colors}/></GradientWrapper>
+                    <Slideshow images={display3.images} seconds={34}/>
+                </LeftGridDiv>
+                {/* Display 2 */}
+                <RightGridDiv>
+                    <GradientWrapper><GradientBackground colors={display2.colors}/></GradientWrapper>
+                </RightGridDiv>
+            </OuterGridDiv>
+            </PoetryPageDiv>
+        </LayoutDiv>
+        
     )
 }
