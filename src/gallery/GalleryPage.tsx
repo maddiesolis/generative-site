@@ -53,12 +53,12 @@ export const GalleryPage: React.FC = () => {
     const [display1, setDisplay1] = useState(series1)
     const [display2, setDisplay2] = useState(series4)
     const [display3, setDisplay3] = useState(series6)
-    // Specify series options for each display
-    const display2Options = [series1, series2, series3]
-    const display1Options = [series4, series5]
-    const display3Options = [series6, series7]
 
     useEffect(() => {
+        // Specify series options for each display
+        const display1Options = [series4, series5]
+        const display2Options = [series1, series2, series3]
+        const display3Options = [series6, series7]
         // Randomize chosen series within display options
         const display1Index = Math.floor(Math.random() * display1Options.length)
         const display2Index = Math.floor(Math.random() * display2Options.length)
@@ -74,7 +74,7 @@ export const GalleryPage: React.FC = () => {
         console.log('display 1', display1)
         console.log('display 2', display2)
         console.log('display 3', display3)
-    })
+    }, [display1, display2, display3])
     return(
         <LayoutDiv>
             <Navbar/>
