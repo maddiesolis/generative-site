@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { HomePage } from './home/HomePage';
 import { GalleryPage } from './gallery/GalleryPage';
 import { QuizPage } from './quiz/QuizPage';
@@ -11,6 +11,9 @@ const App: React.FunctionComponent = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/you" element={<QuizPage />} />
+            {/* Custom redirects */}
+            <Route path="/gallery.html" element={<Navigate to="/gallery" />} />
+            <Route path="/you.html" element={<Navigate to="/you" />} />
         </Routes>
     </BrowserRouter>
 );
