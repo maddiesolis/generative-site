@@ -6,7 +6,7 @@ export const PageContainerDiv = styled.div`
 `
 export const HomeDiv = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 2fr 1fr; */
     height: 100%;
 `
 export const HomeLeftSideDiv = styled.div`
@@ -27,37 +27,37 @@ export const HomeTitleDiv = styled.div`
     gap: 2rem;
 `
 export const IntroSpan = styled.span`
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
     font-weight: 800;
-    font-size: 30px;
-    height: 10px;
-    color: #264653;
+    font-size: 24px;
+    height: 5px;
+    color: #6086BE;
 `
 
 export const TitleSpan = styled.span`
     font-family: 'Titan One', sans-serif;
     font-weight: 700;
-    font-size: 90px;
-    line-height: 120px;
+    font-size: 80px;
+    line-height: 90px;
     color: #264653;
 `
 export const DescriptionSpan = styled(IntroSpan)`
     font-weight: 400 !important;
-    width: 600px;
-    font-size: 40px;
+    width: 800px;
+    font-size: 28px;
     line-height: 50px;
-    margin-top: 20px;
+    margin-top: 40px;
+    color: #DDD3D3
 `
 export const AnimatedButtonDiv = styled.div`
     position: relative;
-    width: 150px;
+    width: 300px;
     height: 40px;
     border: 3px solid #3B8EA5;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
 `
 export const AnimatedButton = styled.button`
     height: 44px;
-    width: 154px;
+    width: 304px;
     background-color: #3B8EA5;
     border: none;
     margin-top: -8px;
@@ -68,8 +68,8 @@ export const AnimatedButton = styled.button`
     }
 `
 export const AnimatedButtonLink = styled(Link)`
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;

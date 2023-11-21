@@ -2,34 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const QuestionLayoutDiv = styled.div`
-  width: 600px;
-  height: fit-content;
-  padding: 2rem;
-  /* border: 1px solid #ccc; */
-  /* border-radius: 4px; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: fit-content;
+    padding: 2rem;
+    gap: 2rem;
 `;
 export const TitleH2 = styled.h2`
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 3rem;
-    color: #264653;
+    color: #6086BE;
 `;
 const OptionsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 `;
 const Option = styled.button`
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
-    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
     padding: 10px;
     margin: 0 auto;
     width: 80%;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 24px;
     background-color: #f5f5f5;
     &:hover {
         background-color: #767676;
@@ -39,21 +37,19 @@ const Option = styled.button`
 
 interface QuestionProps { 
 	question: string; 
-	choices: string[]; 
+	options: string[]; 
 	onAnswer: (answer: string) => void; 
-    first?: boolean;
-    last?: boolean;
 } 
 
 export const Question: React.FC<QuestionProps> = ( 
-	{ question, choices, onAnswer, first, last }) => { 
+	{ question, options, onAnswer }) => { 
 	return ( 
         <QuestionLayoutDiv>
             <TitleH2>{question}</TitleH2>
             <OptionsContainer> 
-                {choices.map((choice) => ( 
-                    <Option key={choice} onClick={() => onAnswer(choice)}> 
-                        {choice}
+                {options.map((option) => ( 
+                    <Option key={option} onClick={() => onAnswer(option)}> 
+                        {option}
                     </Option> 
                 ))} 
             </OptionsContainer>

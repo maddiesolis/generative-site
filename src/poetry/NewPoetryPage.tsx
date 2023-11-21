@@ -88,10 +88,10 @@ export const NewPoetryPage: React.FC = () => {
                             {/* Display 1 */}
                             <Slideshow images={display1.images} seconds={22}/>
                             <FlickerTextBox>
-                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={100} color={display1.colors.primary}/>
-                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={240} color={display1.colors.secondary}/>
-                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={848} color={display1.colors.tertiary}/>
-                                <WordFlicker textArray={["How would you describe yourself?", "Little meow moew", "Clover the cat"]} delay={53} color={display1.colors.quaternary}/>                            </FlickerTextBox>
+                                <WordFlicker textArray={["How would you describe yourself?", "How would others describe you?"]} delay={100} color={display1.colors.primary}/>
+                                <WordFlicker textArray={["How would you visualise yourself?", "What does it mean to visualise yourself?", "What criteria do you use to evaluate yourself?"]} delay={240} color={display1.colors.secondary}/>
+                                <WordFlicker textArray={["Is there a realm that represents you?", "Can you picture a realm that represents you?"]} delay={848} color={display1.colors.tertiary}/>
+                                <WordFlicker textArray={["What shapes represent you?", "What colours represent you?"]} delay={53} color={display1.colors.quaternary}/>                            </FlickerTextBox>
                         </SplitRectangleDiv>
                         {/* Display 2 */}
                         <Slideshow images={display2.images} seconds={10}/>

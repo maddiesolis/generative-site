@@ -3,11 +3,11 @@ import styled, { keyframes } from 'styled-components';
 import { TitleSpan } from './HomeComponents';
 
 const gradientAnimation = keyframes`
-  0% { color: #fc5c7d; }
-  25% { color: #6a82fb; }
-  50% { color: #fc5c7d; }
-  75% { color: #6a82fb; }
-  100% { color: #fc5c7d; }
+  0% { color: #CF835D; }
+  25% { color: #C66C3F; }
+  50% { color: #874728; }
+  75% { color: #482615; }
+  100% { color: #C66C3F; }
 `;
 
 const GradientTextSpan = styled(TitleSpan)`

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const TextSpan = styled.span`
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
     font-weight: 800;
     font-size: 24px;
     line-height: 28px;
