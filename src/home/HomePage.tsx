@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AnimatedButton, AnimatedButtonDiv, AnimatedButtonLink, DescriptionSpan, HomeDiv, HomeLeftSideDiv, HomeRightSideDiv, HomeTitleDiv, PageContainerDiv } from './HomeComponents';
+import { DescriptionSpan, HomeDiv, HomeLeftSideDiv, HomeTitleDiv, PageContainerDiv } from './HomeComponents';
 import Navbar from "../Navbar";
 import { GradientText } from "./GradientText";
 import { InitialFlicker } from "./InitialFlicker";
@@ -10,7 +10,6 @@ export const LayoutDiv = styled.div`
     grid-template-rows: 10% 90%;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    /* background-color: #DDD3D3; */
 `
 
 export const HomePage: React.FC = () => {

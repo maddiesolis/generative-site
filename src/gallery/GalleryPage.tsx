@@ -7,7 +7,7 @@ import { WordFlicker } from "../home/WordFlicker";
 import { series1, series2, series3, series4, series5, series6, series7 } from "../quiz/AnswerCombos";
 import { useEffect, useState } from "react";
 
-const PoetryPageDiv = styled(LayoutDiv)`
+const GalleryPageDiv = styled(LayoutDiv)`
     padding: 0 5%;
     height: 100vh;
 `
@@ -48,7 +48,7 @@ const GradientWrapper = styled.div`
     justify-content: center;
     margin: 1rem;
 `
-export const NewPoetryPage: React.FC = () => {
+export const GalleryPage: React.FC = () => {
     // Initialize display objects {images, colors}
     const [display1, setDisplay1] = useState(series1)
     const [display2, setDisplay2] = useState(series4)
@@ -78,7 +78,7 @@ export const NewPoetryPage: React.FC = () => {
     return(
         <LayoutDiv>
             <Navbar/>
-            <PoetryPageDiv>
+            <GalleryPageDiv>
             <OuterGridDiv>
                 <LeftGridDiv>
                     <SplitRectangleDiv>
@@ -101,7 +101,7 @@ export const NewPoetryPage: React.FC = () => {
                     <GradientWrapper><GradientBackground colors={display2.colors}/></GradientWrapper>
                 </RightGridDiv>
             </OuterGridDiv>
-            </PoetryPageDiv>
+            </GalleryPageDiv>
         </LayoutDiv>
         
     )

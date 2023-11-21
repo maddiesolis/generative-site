@@ -6,7 +6,6 @@ export const PageContainerDiv = styled.div`
 `
 export const HomeDiv = styled.div`
     display: grid;
-    /* grid-template-columns: 2fr 1fr; */
     height: 100%;
 `
 export const HomeLeftSideDiv = styled.div`
@@ -46,34 +45,5 @@ export const DescriptionSpan = styled(IntroSpan)`
     font-size: 26px;
     line-height: 50px;
     margin-top: 20px;
-    color: #18263B
-`
-export const AnimatedButtonDiv = styled.div`
-    position: relative;
-    width: 300px;
-    height: 40px;
-    border: 3px solid #3B8EA5;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
-`
-export const AnimatedButton = styled.button`
-    height: 44px;
-    width: 304px;
-    background-color: #3B8EA5;
-    border: none;
-    margin-top: -8px;
-    margin-left: -8px;
-    :hover {
-        transform: translateY(2px) translateX(2px);
-        cursor: pointer;
-    }
-`
-export const AnimatedButtonLink = styled(Link)`
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-    color: #EDF6F9;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    color: #18263B;
 `

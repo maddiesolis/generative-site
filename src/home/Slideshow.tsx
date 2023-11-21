@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import blank_sample from "../images/blank_sample.png"
 
 const fadeInOutAnimation = keyframes`
   0% { opacity: 0; }
@@ -37,12 +36,6 @@ export const GridElementDiv = styled.div`
   position: relative;
   border-radius: 4px;
   margin: 1rem;
-  img {
-    /* width: 30rem;
-    height: 30rem; */
-    /* width: 100%;
-    height: 100%; */
-  }
 `
 
 interface SlideShowProps {

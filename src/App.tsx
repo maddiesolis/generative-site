@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { HomePage } from './home/HomePage';
-import { NewPoetryPage } from './poetry/NewPoetryPage';
+import { GalleryPage } from './gallery/GalleryPage';
 import { QuizPage } from './quiz/QuizPage';
 
 const App: React.FunctionComponent = () => {
@@ -9,7 +9,7 @@ const App: React.FunctionComponent = () => {
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="gallery" element={<NewPoetryPage />} />
+            <Route path="gallery" element={<GalleryPage />} />
             <Route path="you" element={<QuizPage />} />
         </Routes>
     </BrowserRouter>
