@@ -70,10 +70,6 @@ export const GalleryPage: React.FC = () => {
         setDisplay2(selectedDisplay2);
         const selectedDisplay3 = display3Options[display3Index]
         setDisplay3(selectedDisplay3);
-        // Console logs
-        console.log('display 1', display1)
-        console.log('display 2', display2)
-        console.log('display 3', display3)
     }, [display1, display2, display3])
     return(
         <LayoutDiv>
