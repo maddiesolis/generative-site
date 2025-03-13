@@ -16,4 +16,5 @@ React functional components: I used React functional components because they are
 The artwork displayed is a combination of digital collage and illustration.
 - Photographs were taken by me
 - Collages were edited/illustrated in PhotoShop and Clip Studio Paint
+
 The imagery intends to convey serenity, playfulness, and beauty.
