@@ -1,5 +1,5 @@
 # Generative Art Gallery (Cat Sage Gallery)
-Developed in February, 2024.
+Developed in October, 2023.
 
 ## Tech Stack
 React app using Typescript.
